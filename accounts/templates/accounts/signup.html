@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>創作和食・飲食店向け 無料ホームページテンプレートtp_foods9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="{% static 'ramen/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'ramen/css/slide.css' %}">
+<link rel="stylesheet" href="{% static 'ramen/css/inview.css' %}">
+<script src="{% static 'ramen/js/openclose.js' %}"></script>
+<script src="{% static 'ramen/js/fixmenu.js' %}"></script>
+<script src="{% static 'ramen/js/fixmenu_pagetop.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+<main class="form-signin w-100 m-auto">
+<form method="post" class="p-4 m-4 bg-light border border-success rounded form-group">
+    <h1>アカウント作成</h1>
+    {% csrf_token %}
+    <div class="form-floating">
+    <input type="text" name="username" class="form-control my-4" id="floatingInput" placeholder="ユーザーID"><br>
+    <label for="floatingPassword"></label>
+    </div>
+    <input type="password" name="password1" class="form-control my-4" id="floatingPassword" placeholder="パスワード"><br>
+    <label for="floatingInput"></label>
+    <input type="password" name="password2" class="form-control my-4" id="floatingPassword" placeholder="パスワード確認用"><br>
+    <label for="floatingPassword"></label>
+    <small class="mb-2 small text-start">パスワードは8文字以上で設定してください</small><br>
+    {% if form.erros %}
+    <span class="mb-2 small text-danger d-block text-start">利用できないユーザーIDやパスワードの可能性があります。入力内容を再度ご確認ください</span>
+    {% endif %}
+    <button type="submit" class="btn btn-success m-2">アカウント作成</button>
+</form>
+</main>
+</body>
+</html>
